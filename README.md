@@ -32,6 +32,10 @@
         # make framework
         # make strace
 
+* build one java module
+
+        # mmm packages/apps/Nfc/
+
 # MTK
 
 Few words about mtk related binaries, services and migration peculiarities.

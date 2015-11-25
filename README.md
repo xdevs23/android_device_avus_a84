@@ -27,6 +27,10 @@
 
         # brunch cm_mt6592-eng
 
+* system binaries
+        # make framework
+        # make strace
+
 # MTK
 
 Few words about mtk related binaries, services and migration peculiarities.

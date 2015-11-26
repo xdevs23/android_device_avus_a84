@@ -34,7 +34,7 @@
 
 * build one java module
 
-        # mmm packages/apps/Nfc/
+        # mmm packages/apps/Nfc/ || (cd packages/apps/Nfc/ && mm)
 
 # MTK
 

@@ -1,0 +1,193 @@
+# begin debuggable properties
+ro.debuggable=1
+ro.adb.secure=0
+ro.secure=0
+# end debuggable properties
+# begin mediatek build properties
+ro.mediatek.version.release=A84-Austria-QB18D-6592V1.0.7
+ro.mediatek.platform=MT6592
+ro.mediatek.chip_ver=S01
+ro.mediatek.version.branch=KK1.MP1
+ro.mediatek.version.sdk=2
+# end mediatek build properties
+#
+# from out/target/product/eastaeon92_wet_kk/obj/CUSTGEN/config/system.prop
+#
+#
+# system.prop for generic sdk
+#
+rild.libpath=/system/lib/mtk-ril.so
+rild.libargs=-d /dev/ttyC0
+# MTK, Infinity, 20090720 {
+wifi.interface=wlan0
+# MTK, Infinity, 20090720 }
+# MTK, mtk03034, 20101210 {
+ro.mediatek.wlan.wsc=1
+# MTK, mtk03034 20101210}
+# MTK, mtk03034, 20110318 {
+ro.mediatek.wlan.p2p=1
+# MTK, mtk03034 20110318}
+# MTK, mtk03034, 20101213 {
+mediatek.wlan.ctia=0
+# MTK, mtk03034 20101213}
+#
+wifi.tethering.interface=ap0
+#
+ro.opengles.version=131072
+wifi.direct.interface=p2p0
+# USB MTP WHQL
+ro.sys.usb.mtp.whql.enable=0
+# Power off opt in IPO
+sys.ipo.pwrdncap=2
+# Switching Menu of Mass storage and MTP
+ro.sys.usb.storage.type=mass_storage,adb
+# USB BICR function
+ro.sys.usb.bicr=yes
+# USB Charge only function
+ro.sys.usb.charging.only=yes
+# audio
+ro.camera.sound.forced=0
+ro.audio.silent=0
+ro.zygote.preload.enable=0
+persist.sys.timezone=Europe/Brussels
+#
+# ADDITIONAL_BUILD_PROPERTIES
+#
+ro.sf.debug=1
+ro.debug.adb=1
+ro.adb.enabled=1
+ro.adb.root=1
+ro.sf.adb_secure=0
+ro.sf.adb_debuggable=1
+ro.adb.debuggable=1
+ro.adb.secure=0
+persist.gemini.sim_num=2
+ro.gemini.smart_sim_switch=false
+ro.gemini.smart_3g_switch=1
+ril.specific.sm_cause=0
+bgw.current3gband=0
+ril.external.md=0
+ro.btstack=blueangel
+ro.sf.hwrotation=0
+ril.current.share_modem=2
+launcherplus.allappsgrid=2d
+curlockscreen=1
+ro.mediatek.gemini_support=true
+persist.radio.fd.counter=15
+persist.radio.fd.off.counter=5
+persist.radio.fd.r8.counter=15
+persist.radio.fd.off.r8.counter=5
+drm.service.enabled=true
+fmradio.driver.enable=1
+ril.first.md=1
+ril.flightmode.poweroffMD=1
+ril.telephony.mode=0
+dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt
+persist.mtk.anr.mechanism=1
+mediatek.wlan.chip=MTK_CONNSYS_MT6592
+mediatek.wlan.module.postfix=_mtk_connsys_mt6592
+ril.radiooff.poweroffMD=0
+ro.config.notification_sound=Proxima.ogg
+ro.config.alarm_alert=Alarm_Classic.ogg
+ro.config.ringtone=Backroad.ogg
+persist.mtk.wcn.combo.chipid=-1
+ter.service.enable=0
+mediatek.extmd.usbport=0
+persist.sys.display.clearMotion=0
+persist.clearMotion.fblevel.nrm=255
+persist.clearMotion.fblevel.bdr=255
+ro.lte.dc.support=1
+ril.active.md=0
+ro.setupwizard.mode=OPTIONAL
+ro.com.google.gmsversion=4.4_r3
+persist.sys.dalvik.vm.lib=libdvm.so
+#
+# Navbar
+# 
+net.bt.name=Android
+dalvik.vm.stack-trace-file=/data/anr/traces.txt
+# begin fota properties
+ro.fota.platform=MTK6582_KK
+ro.fota.type=phone
+ro.fota.oem=eastaeon6582_KK
+ro.fota.device=A84
+ro.fota.version=A84-Austria-QB18D-6592V1.0.7
+# begin fota properties
+### Pimp my Rom : Low OOM groupings [REMOVED]
+### Reason: app crashes due to out of memory
+dalvik.vm.dexopt-flags=o=v,
+### Pimp my Rom : Disable Dalvik JNI Error Checking
+dalvik.vm.checkjni=false
+net.rmnet0.dns1=8.8.8.8
+net.rmnet0.dns2=8.8.4.4
+net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960
+ro.ril.enable.3g.prefix=1
+ro.ril.hep=1
+ro.ril.enable.dtm=1
+ro.ril.gprsclass=12
+ro.ril.hsdpa.category=8
+ro.ril.enable.a53=1
+ro.ril.hsupa.category=5
+dalvik.vm.heapsize=384m
+dalvik.vm.heapgrowthlimit=96m
+dalvik.vm.heapstartsize=2m
+### Pimp my Rom : Disable GPU Rendering on 2d Operations
+debug.sf.hw=1
+debug.egl.hw=1
+debug.composition.type=gpu
+### Pimp my Rom : Disable Surface Dithering
+persist.sys.use_dithering=0
+### Pimp my Rom : Allow the purge of assets to free-up more RAM
+### Pimp my Rom : Deny the purge of assets
+persist.sys.purgeable_assets=0
+### Pimp my Rom : Disable Kernel Error Checking
+ro.kernel.android.checkjni=0
+ro.kernel.checkjni=0
+### Pimp my Rom : Video Streaming Tweak 
+media.stagefright.enable-player=true
+media.stagefright.enable-meta=true
+media.stagefright.enable-scan=false
+media.stagefright.enable-http=true
+### Pimp my Rom : Enable HSUPA Network Mode
+ro.ril.hsxpa=3
+### Pimp my Rom : Faster DNS Resolution Tweaks
+net.dns1=8.8.8.8
+net.dns2=8.8.4.4
+### Pimp my Rom : Allow Dalvik to use JIT Compiler
+dalvik.vm.execution-mode=int:jit
+### Pimp my Rom : Hardware Acceleration Enabled
+video.accelerate.hw=1
+### Pimp my Rom : Multitouch Amount
+ro.product.max_num_touch=5
+ro.product.multi_touch_enabled=true
+### Pimp my Rom : Minimum Pointer Duration
+ro.min_pointer_dur=1
+### Pimp my Rom : WindowsManager Max Events per Second
+windowsmgr.max_events_per_sec=360
+### Pimp my Rom : SurfaceFlinger Minimum Velocity
+ro.min.fling_velocity=5400
+### Pimp my Rom : SurfaceFlinger Maximum Velocity
+ro.max.fling_velocity=11600
+wifi.supplicant_scan_interval=40
+persist.wifi_scan_interval=40
+### Pimp my Rom : Increase photo and video recording quality
+ro.media.dec.jpeg.memcap=8000000
+ro.media.enc.hprof.vid.bps=8000000
+ro.media.capture.maxres=8m
+ro.media.panorama.defres=3264x1840
+ro.media.panorama.frameres=1280x720
+ro.camcorder.videoModes=true
+ro.media.enc.hprof.vid.fps=65
+### Pimp my Rom :  Increase jpg quality to 100%
+ro.media.enc.jpeg.quality=100
+### Pimp my Rom : Better Flashlight intensity & camera-flash quality
+ro.media.capture.flash=led
+ro.media.capture.flashMinV=3300000
+ro.media.capture.torchIntensity=65
+ro.media.capture.flashIntensity=70
+### Pimp my Rom :  Enable Quick Power-On mode to reduce boot-time
+ro.config.hw_quickpoweron=true

@@ -1,0 +1,78 @@
+# Board General info
+TARGET_BOOTLOADER_BOARD_NAME := mt6592
+TARGET_BOARD_PLATFORM := platform
+BOARD_HAS_NO_SELECT_BUTTON := true
+TARGET_ARCH := arm
+TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_ABI := arm
+TARGET_CPU_ABI2 :=
+TARGET_ARCH_VARIANT := armv7-a-neon
+ARCH_ARM_HAVE_TLS_REGISTER := false
+BOARD_USES_QCOM_HARDWARE := false
+BOARD_USES_QCOM_GPS := false
+BOARD_USES_QCOM_LIBS := false
+BOARD_USES_QCOM_LIBRPC := false
+BOARD_USE_QCOM_PMEM := false
+
+# ril
+
+# audio
+HAVE_HTC_AUDIO_DRIVER := false
+BOARD_USES_GENERIC_AUDIO := true
+TARGET_PROVIDES_LIBAUDIO := false
+
+# wifi
+BOARD_WPA_SUPPLICANT_DRIVER := false
+#WPA_SUPPLICANT_VERSION :=
+#BOARD_WLAN_DEVICE :=
+#WIFI_DRIVER_FW_PATH_STA := "/system/etc/wifi/"
+#WIFI_DRIVER_FW_PATH_AP := "/system/etc/wifi/"
+#WIFI_DRIVER_MODULE_NAME := "?"
+#WIFI_DRIVER_MODULE_PATH := "/lib/modules/?"
+#WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wifi/? nvram_path=/system/etc/wifi/?"
+
+# video
+#BOARD_EGL_CFG := device/manufacturer/devicename/files/?
+TARGET_BOARD_PLATFORM_GPU := mali450-mp4
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+#BOARD_HAVE_BLUETOOTH_BCM := ?
+
+# kernel
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
+BOARD_KERNEL_BASE := 0x10000000
+BOARD_KERNEL_PAGESIZE := 2048
+TARGET_PREBUILT_KERNEL := device/avus/a84/kernel/zImage
+
+# Partitioning setup (fix this up by examining /proc/mtd on a running device)
+BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 947912704
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 1241513984
+BOARD_FLASH_BLOCK_SIZE := 131072
+
+## PARTITION LAYOUT/INFO ##
+BOARD_DATA_DEVICE := /emmc@userdata
+BOARD_DATA_FILESYSTEM := ext4
+BOARD_DATA_FILESYSTEM_OPTIONS := rw,nosuid,nodev,noatime,nodiratime 0 0 0644
+BOARD_SYSTEM_DEVICE := /emmc@system
+BOARD_SYSTEM_FILESYSTEM := ext4
+BOARD_SYSTEM_FILESYSTEM_OPTIONS := rw,noatime,nodiratime 0 0 0755
+BOARD_CACHE_DEVICE := /emmc@cache
+BOARD_CACHE_FILESYSTEM := ext4
+BOARD_CACHE_FILESYSTEM_OPTION := rw,nosuid,nodev,noatime,nodiratime 0 0 0755
+BOARD_BOOT_DEVICE := /emmc@boot
+BOARD_RECOVERY_DEVICE := /emmc@recovery
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_SDCARD_DEVICE_PRIMARY := /emmc@sdcard
+
+# recovery
+BOARD_RECOVERY_HANDLES_MOUNT := true
+#BOARD_CUSTOM_GRAPHICS:= graphics.c 
+
+# JIT / Optimizations
+WITH_DEXPREOPT := true
+JS_ENGINE := v8
+
+TARGET_SPECIFIC_HEADER_PATH += device/avus/a84/rootdir

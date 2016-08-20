@@ -1,0 +1,6 @@
+# Reboot to recovery if file /system/framework/core.jar does not exist
+# If file /system/norecoverychk.cfg exists, do not reboot.
+service recvondemand /checkrecv.sh
+	user root
+	oneshot
+	disabled

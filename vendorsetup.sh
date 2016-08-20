@@ -1,0 +1,3 @@
+add_lunch_combo XOS_a84-user
+add_lunch_combo XOS_a84-userdebug
+add_lunch_combo XOS_a84-eng

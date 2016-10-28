@@ -53,6 +53,7 @@ persist.sys.timezone=Europe/Brussels
 #
 # ADDITIONAL_BUILD_PROPERTIES
 #
+ro.opengles.version=131072
 ro.sf.debug=1
 ro.debug.adb=1
 ro.adb.enabled=1
@@ -73,6 +74,15 @@ ril.current.share_modem=2
 launcherplus.allappsgrid=2d
 curlockscreen=1
 ro.mediatek.gemini_support=true
+#
+# system.prop for mt6592
+#
+service.adb.root=1
+ro.sf.lcd_density=240
+wifi.interface=wlan0
+qemu.hw.mainkeys=0
+
+persist.mtk.aee.aed=on
 persist.radio.fd.counter=15
 persist.radio.fd.off.counter=5
 persist.radio.fd.r8.counter=15
@@ -191,3 +201,21 @@ ro.media.capture.torchIntensity=65
 ro.media.capture.flashIntensity=70
 ### Pimp my Rom :  Enable Quick Power-On mode to reduce boot-time
 ro.config.hw_quickpoweron=true
+fmradio.driver.enable=1
+ril.radiooff.poweroffMD=0
+
+mux.debuglog.enable=1
+rild.libpath=/system/lib/libmtkrilw.so
+rild.libargs=-d /dev/ttyC0
+ril.specific.sm_cause=0
+ril.external.md=0
+ril.current.share_modem=2
+ril.first.md=1
+ril.flightmode.poweroffMD=1
+ril.telephony.mode=0
+ril.radiooff.poweroffMD=0
+ril.active.md=0
+
+ro.telephony.ril_class=MTKRIL
+
+debug.sf.ddms=1

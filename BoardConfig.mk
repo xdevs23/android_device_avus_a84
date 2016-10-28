@@ -1,78 +1,66 @@
-# Board General info
-TARGET_BOOTLOADER_BOARD_NAME := mt6592
-TARGET_BOARD_PLATFORM := platform
-BOARD_HAS_NO_SELECT_BUTTON := true
+USE_CAMERA_STUB := true
+
+# inherit from the proprietary version
+-include vendor/mediatek/mt6592/BoardConfigVendor.mk
+
+TARGET_BOARD_PLATFORM := mt6592
+TARGET_NO_BOOTLOADER := true
+
 TARGET_ARCH := arm
-TARGET_CPU_VARIANT := cortex-a7
-TARGET_CPU_ABI := arm
-TARGET_CPU_ABI2 :=
 TARGET_ARCH_VARIANT := armv7-a-neon
-ARCH_ARM_HAVE_TLS_REGISTER := false
-BOARD_USES_QCOM_HARDWARE := false
-BOARD_USES_QCOM_GPS := false
-BOARD_USES_QCOM_LIBS := false
-BOARD_USES_QCOM_LIBRPC := false
-BOARD_USE_QCOM_PMEM := false
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := true
+TARGET_CPU_VARIANT := cortex-a7
 
-# ril
+TARGET_BOOTLOADER_BOARD_NAME := mt6592
 
-# audio
-HAVE_HTC_AUDIO_DRIVER := false
-BOARD_USES_GENERIC_AUDIO := true
-TARGET_PROVIDES_LIBAUDIO := false
+TARGET_USERIMAGES_USE_EXT4:=true
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
-# wifi
-BOARD_WPA_SUPPLICANT_DRIVER := false
-#WPA_SUPPLICANT_VERSION :=
-#BOARD_WLAN_DEVICE :=
-#WIFI_DRIVER_FW_PATH_STA := "/system/etc/wifi/"
-#WIFI_DRIVER_FW_PATH_AP := "/system/etc/wifi/"
-#WIFI_DRIVER_MODULE_NAME := "?"
-#WIFI_DRIVER_MODULE_PATH := "/lib/modules/?"
-#WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wifi/? nvram_path=/system/etc/wifi/?"
-
-# video
-#BOARD_EGL_CFG := device/manufacturer/devicename/files/?
-TARGET_BOARD_PLATFORM_GPU := mali450-mp4
-
-# Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-#BOARD_HAVE_BLUETOOTH_BCM := ?
-
-# kernel
-BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_PREBUILT_KERNEL := device/avus/a84/kernel/zImage
 
-# Partitioning setup (fix this up by examining /proc/mtd on a running device)
+# make_ext4fs requires numbers in dec format
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 947912704
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 1241513984
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 4303355904
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-## PARTITION LAYOUT/INFO ##
-BOARD_DATA_DEVICE := /emmc@userdata
-BOARD_DATA_FILESYSTEM := ext4
-BOARD_DATA_FILESYSTEM_OPTIONS := rw,nosuid,nodev,noatime,nodiratime 0 0 0644
-BOARD_SYSTEM_DEVICE := /emmc@system
-BOARD_SYSTEM_FILESYSTEM := ext4
-BOARD_SYSTEM_FILESYSTEM_OPTIONS := rw,noatime,nodiratime 0 0 0755
-BOARD_CACHE_DEVICE := /emmc@cache
-BOARD_CACHE_FILESYSTEM := ext4
-BOARD_CACHE_FILESYSTEM_OPTION := rw,nosuid,nodev,noatime,nodiratime 0 0 0755
-BOARD_BOOT_DEVICE := /emmc@boot
-BOARD_RECOVERY_DEVICE := /emmc@recovery
-TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_SDCARD_DEVICE_PRIMARY := /emmc@sdcard
+BOARD_SEPOLICY_DIRS := \
+       device/mediatek/mt6592/sepolicy
 
-# recovery
-BOARD_RECOVERY_HANDLES_MOUNT := true
-#BOARD_CUSTOM_GRAPHICS:= graphics.c 
+BOARD_SEPOLICY_UNION := \
+       device.te \
+       app.te \
+       system.te \
+       file_contexts
 
-# JIT / Optimizations
-WITH_DEXPREOPT := true
-JS_ENGINE := v8
+TARGET_PREBUILT_KERNEL := device/mediatek/mt6592/kernel
+TARGET_RECOVERY_FSTAB := device/mediatek/mt6592/recovery.fstab
 
-TARGET_SPECIFIC_HEADER_PATH += device/avus/a84/rootdir
+BOARD_HAS_NO_SELECT_BUTTON := true
+
+BOARD_CUSTOM_BOOTIMG_MK := device/mediatek/mt6592/bootimg.mk
+BOARD_MKBOOTIMG_ARGS := --board 1400865686
+
+TARGET_KMODULES := true
+
+BOARD_EGL_CFG := device/mediatek/mt6592/egl.cfg
+
+BOARD_RIL_CLASS := ../../../device/mediatek/mt6592/ril/
+
+BOARD_CONNECTIVITY_VENDOR := MediaTek
+BOARD_CONNECTIVITY_MODULE := conn_soc
+
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mt66xx
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mt66xx
+WIFI_DRIVER_FW_PATH_PARAM:="/dev/wmtWifi"
+WIFI_DRIVER_FW_PATH_STA:=STA
+WIFI_DRIVER_FW_PATH_AP:=AP
+WIFI_DRIVER_FW_PATH_P2P:=P2P

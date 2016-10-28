@@ -30,7 +30,7 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.model
 TARGET_VENDOR := Avus
 
 
-$(call inherit-product, device/avus/a84/device.mk)
+$(call inherit-product, device/avus/a84/device_mt6592.mk)
 
 # Inherit some common halogenOS stuff.
 $(call inherit-product, vendor/xos/config/common.mk)

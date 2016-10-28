@@ -1,4 +1,4 @@
-# Copyright (C) 2016, halogenOS (XOS)
+# Copyright (C) 2016 halogenOS
 # 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ PRODUCT_NAME := XOS_a84
 PRODUCT_DEVICE := a84
 PRODUCT_MANUFACTURER := Avus
 PRODUCT_BRAND := Avus
+PRODUCT_BOARD := MT6592
 
 PRODUCT_GMS_CLIENTID_BASE := android-mediatek
 

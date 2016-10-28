@@ -15,7 +15,7 @@
 # limitations under the License.
 
 DEVICE=a84
-VENDOR=Avus
+VENDOR=avus
 OUTDIR=$VENDOR/$DEVICE
 #MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 mkdir -p ../../../vendor/$VENDOR/$DEVICE

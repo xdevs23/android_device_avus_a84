@@ -7,9 +7,9 @@ $(call inherit-product-if-exists, vendor/mediatek/mt6592/mt6592-vendor.mk)
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
-DEVICE_PACKAGE_OVERLAYS += device/mediatek/mt6592/overlay
+DEVICE_PACKAGE_OVERLAYS += device/avus/a84/overlay
 
-LOCAL_PATH := device/mediatek/mt6592
+LOCAL_PATH := device/avus/a84
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
@@ -38,17 +38,17 @@ PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx
 
 PRODUCT_COPY_FILES += \
-    device/mediatek/mt6592/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl
+    device/avus/a84/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl
 
 PRODUCT_COPY_FILES += \
-    device/mediatek/mt6592/init.recovery.mt6592.rc:root/init.recovery.mt6592.rc
+    device/avus/a84/init.recovery.mt6592.rc:root/init.recovery.mt6592.rc
 
 PRODUCT_COPY_FILES += \
-    device/mediatek/mt6592/audio/audio_policy.conf:system/etc/audio_policy.conf
+    device/avus/a84/audio/audio_policy.conf:system/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
-    device/mediatek/mt6592/fstab.mt6592:root/fstab.mt6592 \
-    device/mediatek/mt6592/init.mt6592.rc:root/init.mt6592.rc \
+    device/avus/a84/fstab.mt6592:root/fstab.mt6592 \
+    device/avus/a84/init.mt6592.rc:root/init.mt6592.rc \
     $(LOCAL_KERNEL):kernel
 
 $(call inherit-product, build/target/product/full.mk)

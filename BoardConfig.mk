@@ -30,7 +30,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 4303355904
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_SEPOLICY_DIRS := \
-       device/mediatek/mt6592/sepolicy
+       device/avus/a84/sepolicy
 
 BOARD_SEPOLICY_UNION := \
        device.te \
@@ -38,19 +38,19 @@ BOARD_SEPOLICY_UNION := \
        system.te \
        file_contexts
 
-TARGET_PREBUILT_KERNEL := device/mediatek/mt6592/kernel
-TARGET_RECOVERY_FSTAB := device/mediatek/mt6592/recovery.fstab
+TARGET_PREBUILT_KERNEL := device/avus/a84/kernel
+TARGET_RECOVERY_FSTAB := device/avus/a84/recovery.fstab
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
-BOARD_CUSTOM_BOOTIMG_MK := device/mediatek/mt6592/bootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/avus/a84/bootimg.mk
 BOARD_MKBOOTIMG_ARGS := --board 1400865686
 
 TARGET_KMODULES := true
 
-BOARD_EGL_CFG := device/mediatek/mt6592/egl.cfg
+BOARD_EGL_CFG := device/avus/a84/egl.cfg
 
-BOARD_RIL_CLASS := ../../../device/mediatek/mt6592/ril/
+BOARD_RIL_CLASS := ../../../device/avus/a84/ril/
 
 BOARD_CONNECTIVITY_VENDOR := MediaTek
 BOARD_CONNECTIVITY_MODULE := conn_soc

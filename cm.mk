@@ -8,7 +8,7 @@ PRODUCT_RELEASE_NAME := mt6592
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/mediatek/mt6592/device_mt6592.mk)
+$(call inherit-product, device/avus/a84/device_mt6592.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := mt6592

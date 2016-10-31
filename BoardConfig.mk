@@ -70,3 +70,6 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # Use old sepolicy version
 #POLICYVERS := 26
+
+# Surfaceflinger: avoid build error
+LEGACY_NEEDS_PUBLIC_LAYERVECTOR := true

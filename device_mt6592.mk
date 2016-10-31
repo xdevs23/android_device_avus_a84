@@ -10,11 +10,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 DEVICE_PACKAGE_OVERLAYS += device/avus/a84/overlay
 
 LOCAL_PATH := device/avus/a84
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
 
 PRODUCT_PACKAGES += \
     libxlog
@@ -49,7 +44,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/avus/a84/fstab.mt6592:root/fstab.mt6592 \
     device/avus/a84/init.mt6592.rc:root/init.mt6592.rc \
-    $(LOCAL_KERNEL):kernel
+    device/avus/a84/kernel/zImage:kernel
 
 $(call inherit-product, build/target/product/full.mk)
 

@@ -28,7 +28,7 @@ import static android.telephony.TelephonyManager.NETWORK_TYPE_HSDPA;
 import static android.telephony.TelephonyManager.NETWORK_TYPE_HSUPA;
 import static android.telephony.TelephonyManager.NETWORK_TYPE_HSPA;
 import static android.telephony.TelephonyManager.NETWORK_TYPE_HSPAP;
-import static android.telephony.TelephonyManager.NETWORK_TYPE_DCHSPAP;
+//import static android.telephony.TelephonyManager.NETWORK_TYPE_DCHSPAP;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -71,7 +71,7 @@ import com.android.internal.telephony.cdma.CdmaInformationRecords;
 import com.android.internal.telephony.cdma.CdmaSmsBroadcastConfigInfo;
 import com.android.internal.telephony.dataconnection.DcFailCause;
 import com.android.internal.telephony.dataconnection.DataCallResponse;
-import com.android.internal.telephony.dataconnection.DataProfileOmh;
+//import com.android.internal.telephony.dataconnection.DataProfileOmh;
 import com.android.internal.telephony.dataconnection.DataProfile;
 
 import java.io.ByteArrayInputStream;
@@ -197,9 +197,13 @@ public class MTKRIL extends RIL {
         send(rr);   
     }
 
+    protected void processUnsolicited(Parcel p) {
+        processUnsolicited(p, 0);
+    }
+
     @Override
     protected void
-    processUnsolicited (Parcel p) {
+    processUnsolicited (Parcel p, int i) {
         int response;
         Object ret;
 
@@ -212,7 +216,7 @@ public class MTKRIL extends RIL {
             case RIL_UNSOL_INCOMING_CALL_INDICATION: ret = responseStrings(p); break;
            default:
             p.setDataPosition(pos);
-            super.processUnsolicited(p);
+            super.processUnsolicited(p, i);
             return;
         }
         switch(response) {

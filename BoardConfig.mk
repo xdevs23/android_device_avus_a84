@@ -38,7 +38,7 @@ BOARD_SEPOLICY_UNION := \
        system.te \
        file_contexts
 
-TARGET_PREBUILT_KERNEL := device/avus/a84/kernel
+TARGET_PREBUILT_KERNEL := device/avus/a84/kernel/zImage
 TARGET_RECOVERY_FSTAB := device/avus/a84/recovery.fstab
 
 BOARD_HAS_NO_SELECT_BUTTON := true
